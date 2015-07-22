@@ -1,0 +1,122 @@
+# Project: FloboPuio
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+OBJ  = gp2x/sofont.o gp2x/AnimatedPuyo.o gp2x/audio.o gp2x/corona32.o gp2x/corona.o gp2x/corona_palette.o gp2x/GameControls.o gp2x/HiScores.o gp2x/InputManager.o gp2x/IosException.o gp2x/IosImgProcess.o gp2x/IosVector.o gp2x/main.o gp2x/menu.o gp2x/menuitems.o gp2x/preferences.o gp2x/PuyoAnimations.o gp2x/PuyoCommander.o gp2x/PuyoDoomMelt.o gp2x/PuyoGame.o gp2x/PuyoIA.o gp2x/PuyoLock.o gp2x/PuyoStarter.o gp2x/PuyoStory.o gp2x/PuyoVersion.o gp2x/PuyoView.o gp2x/scenar.l.o gp2x/scenar.y.o gp2x/scrollingtext.o gp2x/SDL_Painter.o gp2x/SDL_prim.o
+LINKOBJ  = gp2x/sofont.o gp2x/AnimatedPuyo.o gp2x/audio.o gp2x/corona32.o gp2x/corona.o gp2x/corona_palette.o gp2x/GameControls.o gp2x/HiScores.o gp2x/InputManager.o gp2x/IosException.o gp2x/IosImgProcess.o gp2x/IosVector.o gp2x/main.o gp2x/menu.o gp2x/menuitems.o gp2x/preferences.o gp2x/PuyoAnimations.o gp2x/PuyoCommander.o gp2x/PuyoDoomMelt.o gp2x/PuyoGame.o gp2x/PuyoIA.o gp2x/PuyoLock.o gp2x/PuyoStarter.o gp2x/PuyoStory.o gp2x/PuyoVersion.o gp2x/PuyoView.o gp2x/scenar.l.o gp2x/scenar.y.o gp2x/scrollingtext.o gp2x/SDL_Painter.o gp2x/SDL_prim.o
+LIBS =  -L"C:/Programmi/GP2XSDK/Tools/arm-gp2x-linux/lib" -L"C:/devel/gp2x/progetti/flobopuyo-0.20" -lSDL_image  -lSDL_mixer -lSDL_ttf -lSDL_inifile -lSDL -lpng -ljpeg -lvorbisidec -lmad -lfreetype -lz -lunicodefont    
+INCS =  -I"C:/Programmi/GP2XSDK/Tools/arm-gp2x-linux/include"  -I"C:/Programmi/GP2XSDK/Tools/include"  -I"C:/Programmi/GP2XSDK/Tools/include/SDL" 
+CXXINCS =  -I"C:/Programmi/GP2XSDK/Tools/include/c++/3.4.6/backward"  -I"C:/Programmi/GP2XSDK/Tools/include/c++/3.4.6"  -I"C:/Programmi/GP2XSDK/Tools/arm-gp2x-linux/include"  -I"C:/Programmi/GP2XSDK/Tools/include"  -I"C:/Programmi/GP2XSDK/Tools/include/SDL" 
+BIN  = FloboPuio.gpe
+CXXFLAGS = $(CXXINCS) -D USE_AUDIO   -DGP2X
+CFLAGS = $(INCS) -D_REENTRANT    -DGP2X
+RM = rm -f
+MKDIR = cygwin-mkdir -p
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before FloboPuio.gpe all-after
+
+all-before:
+	$(MKDIR) "gp2x"
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $@ $(LIBS)
+
+gp2x/sofont.o: sofont.c
+	$(CPP) -c sofont.c -o gp2x/sofont.o $(CXXFLAGS)
+
+gp2x/AnimatedPuyo.o: AnimatedPuyo.cpp
+	$(CPP) -c AnimatedPuyo.cpp -o gp2x/AnimatedPuyo.o $(CXXFLAGS)
+
+gp2x/audio.o: audio.c
+	$(CPP) -c audio.c -o gp2x/audio.o $(CXXFLAGS)
+
+gp2x/corona32.o: corona32.cpp
+	$(CPP) -c corona32.cpp -o gp2x/corona32.o $(CXXFLAGS)
+
+gp2x/corona.o: corona.cpp
+	$(CPP) -c corona.cpp -o gp2x/corona.o $(CXXFLAGS)
+
+gp2x/corona_palette.o: corona_palette.cpp
+	$(CPP) -c corona_palette.cpp -o gp2x/corona_palette.o $(CXXFLAGS)
+
+gp2x/GameControls.o: GameControls.cpp
+	$(CPP) -c GameControls.cpp -o gp2x/GameControls.o $(CXXFLAGS)
+
+gp2x/HiScores.o: HiScores.cpp
+	$(CPP) -c HiScores.cpp -o gp2x/HiScores.o $(CXXFLAGS)
+
+gp2x/InputManager.o: InputManager.cpp
+	$(CPP) -c InputManager.cpp -o gp2x/InputManager.o $(CXXFLAGS)
+
+gp2x/IosException.o: IosException.cpp
+	$(CPP) -c IosException.cpp -o gp2x/IosException.o $(CXXFLAGS)
+
+gp2x/IosImgProcess.o: IosImgProcess.cpp
+	$(CPP) -c IosImgProcess.cpp -o gp2x/IosImgProcess.o $(CXXFLAGS)
+
+gp2x/IosVector.o: IosVector.cpp
+	$(CPP) -c IosVector.cpp -o gp2x/IosVector.o $(CXXFLAGS)
+
+gp2x/main.o: main.cpp
+	$(CPP) -c main.cpp -o gp2x/main.o $(CXXFLAGS)
+
+gp2x/menu.o: menu.c
+	$(CPP) -c menu.c -o gp2x/menu.o $(CXXFLAGS)
+
+gp2x/menuitems.o: menuitems.c
+	$(CPP) -c menuitems.c -o gp2x/menuitems.o $(CXXFLAGS)
+
+gp2x/preferences.o: preferences.c
+	$(CPP) -c preferences.c -o gp2x/preferences.o $(CXXFLAGS)
+
+gp2x/PuyoAnimations.o: PuyoAnimations.cpp
+	$(CPP) -c PuyoAnimations.cpp -o gp2x/PuyoAnimations.o $(CXXFLAGS)
+
+gp2x/PuyoCommander.o: PuyoCommander.cpp
+	$(CPP) -c PuyoCommander.cpp -o gp2x/PuyoCommander.o $(CXXFLAGS)
+
+gp2x/PuyoDoomMelt.o: PuyoDoomMelt.c
+	$(CPP) -c PuyoDoomMelt.c -o gp2x/PuyoDoomMelt.o $(CXXFLAGS)
+
+gp2x/PuyoGame.o: PuyoGame.cpp
+	$(CPP) -c PuyoGame.cpp -o gp2x/PuyoGame.o $(CXXFLAGS)
+
+gp2x/PuyoIA.o: PuyoIA.cpp
+	$(CPP) -c PuyoIA.cpp -o gp2x/PuyoIA.o $(CXXFLAGS)
+
+gp2x/PuyoLock.o: PuyoLock.cpp
+	$(CPP) -c PuyoLock.cpp -o gp2x/PuyoLock.o $(CXXFLAGS)
+
+gp2x/PuyoStarter.o: PuyoStarter.cpp
+	$(CPP) -c PuyoStarter.cpp -o gp2x/PuyoStarter.o $(CXXFLAGS)
+
+gp2x/PuyoStory.o: PuyoStory.cpp
+	$(CPP) -c PuyoStory.cpp -o gp2x/PuyoStory.o $(CXXFLAGS)
+
+gp2x/PuyoVersion.o: PuyoVersion.c
+	$(CPP) -c PuyoVersion.c -o gp2x/PuyoVersion.o $(CXXFLAGS)
+
+gp2x/PuyoView.o: PuyoView.cpp
+	$(CPP) -c PuyoView.cpp -o gp2x/PuyoView.o $(CXXFLAGS)
+
+gp2x/scenar.l.o: scenar.l.c
+	$(CPP) -c scenar.l.c -o gp2x/scenar.l.o $(CXXFLAGS)
+
+gp2x/scenar.y.o: scenar.y.c
+	$(CPP) -c scenar.y.c -o gp2x/scenar.y.o $(CXXFLAGS)
+
+gp2x/scrollingtext.o: scrollingtext.c
+	$(CPP) -c scrollingtext.c -o gp2x/scrollingtext.o $(CXXFLAGS)
+
+gp2x/SDL_Painter.o: SDL_Painter.cpp
+	$(CPP) -c SDL_Painter.cpp -o gp2x/SDL_Painter.o $(CXXFLAGS)
+
+gp2x/SDL_prim.o: SDL_prim.c
+	$(CPP) -c SDL_prim.c -o gp2x/SDL_prim.o $(CXXFLAGS)
